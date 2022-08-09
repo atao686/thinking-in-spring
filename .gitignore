@@ -1,2 +1,4 @@
 # Project exclude paths
 /ioc-container-overview/target/
+
+**/target/
