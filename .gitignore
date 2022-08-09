@@ -2,3 +2,6 @@
 /ioc-container-overview/target/
 
 **/target/
+**/.idea/
+*.iml
+.idea/
