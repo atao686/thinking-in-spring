@@ -1,0 +1,24 @@
+package com.atao.bean.definition;
+
+import com.atao.ioc.domain.User;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * Bean 别名示例
+ * @author by ztsong
+ * @Date 2022/8/9
+ */
+public class BeanAliasDemo {
+
+	public static void main(String[] args) {
+		// 配置 XML 配置文件
+		// 启动 Spring 应用上下文
+		BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/bean-definitions-context.xml");
+		// 通过别名 atao-user 获取曾用名 user 的 bean
+		User user = beanFactory.getBean("user", User.class);
+		User ataoUser = beanFactory.getBean("atao-user", User.class);
+		System.out.println("atao-user 是否与 user Bean 相同：" + (user == ataoUser));
+	}
+
+}
